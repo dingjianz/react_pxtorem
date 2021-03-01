@@ -49,6 +49,7 @@
     "react-app-polyfill": "^1.0.6",
     "react-dev-utils": "^10.2.1",
     "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
     "resolve": "1.15.0",
     "resolve-url-loader": "3.1.1",
     "sass-loader": "8.0.2",
@@ -64,6 +65,7 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
+    "dev": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js"
   },
@@ -133,6 +135,7 @@
     ]
   },
   "devDependencies": {
+    "@craco/craco": "^5.6.4",
     "babel-plugin-import": "^1.13.0",
     "node-sass": "^4.14.1",
     "postcss-pxtorem": "^5.1.1",

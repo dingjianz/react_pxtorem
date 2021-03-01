@@ -1,0 +1,11 @@
+@import 'assets/css/common.scss';
+
+.pxtorem-wrap {
+  font-size: 14px;
+  color:red;
+
+  .box {
+    @include size(100px, 100px);
+    background-color: lightblue;
+  }
+}

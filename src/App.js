@@ -1,15 +1,10 @@
-import React from 'react';
-import { Button } from 'antd-mobile'
-
-import './App.scss';
+import React from 'react'
+import RouterConfig from './router'
 
 function App() {
   return (
-    <div className="App">
-    <Button>点击</Button>
-      <div className="box"></div>
-    </div>
-  );
+    <RouterConfig />
+  )
 }
 
 export default App;

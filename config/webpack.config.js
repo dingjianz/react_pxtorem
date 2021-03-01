@@ -104,13 +104,16 @@ module.exports = function(webpackEnv) {
             // so that it honors browserslist config in package.json
             // which in turn let's users customize the target behavior as per their needs.
             require('postcss-pxtorem')({
-              rootValue: 100,
-              propWhiteList: [],
-              minPixelValue:2,
+              rootValue: 16, // 换算的基数
+              unitPrecision: 5,
+              propWhiteList: [],  // 哪些需要进行px转rem
+              minPixelValue: 2, // 最小转换，如低于 4px的不会进行转成rem
+              selectorBlackList  : ['am-'], // 排除哪些开头的如 .weui-button 等等
             }),
             postcssNormalize(),
           ],
           sourceMap: isEnvProduction && shouldUseSourceMap,
+          exclude: /node_modules/
         },
       },
     ].filter(Boolean);
@@ -303,6 +306,8 @@ module.exports = function(webpackEnv) {
           'scheduler/tracing': 'scheduler/tracing-profiling',
         }),
         ...(modules.webpackAliases || {}),
+        'src': path.resolve(__dirname, '../' , 'src'),
+        'assets': path.resolve(__dirname, '../' , 'src/assets'),
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding
